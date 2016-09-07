@@ -1,0 +1,19 @@
+{
+  "name": "hangman",
+  "version": "0.2.0",
+  "description": "A Hangman game will run entirely with Node.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirgillif/Week11-Hangman.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirgillif/Week11-Hangman/issues"
+  },
+  "homepage": "https://github.com/sirgillif/Week11-Hangman#readme"
+}
