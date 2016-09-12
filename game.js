@@ -1,32 +1,40 @@
 // `game.js` file will randomly select a word for the player.
-var word= require('./word.js');
+var Word= require('./word.js');
 
-var wordBank=['word1','word-2','word3','word-5'];
+var wordBank=['word1','word-2'];
 
 function Game() {
+	//properties of the object
+	//games should have wins losses
+	//a way to keep track of the number of guess left
+	//the current games word
 	this.wins=0;
 	this.losses=0;
 	this.guessRemaining=0;
-	this.lettersUsed=[];
+	this.lettersGuessed = [];
 	this.word=null;
-
+	//actions of the game
+	//the game should be able to rest for replay ability
 	this.startNewGame =function(){
 		this.guessRemaining=10;
-		this.lettersUsed=[];
-		this.word=this.genetrateRandomWord();
+		this.lettersGuessed=[];
+		this.word=this.generateRandWord();
 		console.log("Welcome to Hangman!");
-	}
-	this.genetrateRandomWord=function(){
-		var length =wordBank.length
-		var randWord=wordBank[Math.floor(Math.random()*length)];
-		var currentWord= new Word(randWord);
-		return currentWord;
-	}
-	this.printResults = function(){
-		//print results between guesses.
-	}
-	this.endGame=function(){
-		//print results after the game is over
-	}
-}
-module.exports= Game;
+	};
+	//game should generate a new random word object
+	this.generateRandWord=function () {
+		var randWord = wordBank[Math.floor(Math.random()*wordBank.length)];
+		console.log(randWord);
+		var newWord= new Word(randWord);
+		newWord.generateGuessWord();
+		return newWord;
+	};
+};
+
+//
+// var game=new Game();
+// game.startNewGame();
+// game.word.displayWord();
+
+module.exports = Game;
+
