@@ -1,7 +1,7 @@
 // `game.js` file will randomly select a word for the player.
 var Word= require('./word.js');
 
-var wordBank=['word1','word-2'];
+var wordBank=["Harry","Hermione","Ron","Tonks","Dobby","Ginny","Lockhart","Moody","McGonagall","Umbridge","Malfoy","Lupin","Hagrid","Luna","Bellatrix","Sirius","Voldemort","Neville","Dumbledore","Snape","Accio","Alohomora","Azkaban","Butterbeer","Dementor","Expelliarmus","Gillyweed","Gringotts","Gryffindor","Hogsmeade","Hogwarts","Honeydukes","Howler","Hufflepuff","Incendio","Lumos","Mudblood","Muggle","Ollivanders","Parseltongue","Poltergeist","Portkey","Ravenclaw","Quidditch","Riddikulus","Slytherin","Transfiguration","Stupefy","Wolfsbane"];
 
 function Game() {
 	//properties of the object
@@ -19,12 +19,12 @@ function Game() {
 		this.guessRemaining=10;
 		this.lettersGuessed=[];
 		this.word=this.generateRandWord();
-		console.log("Welcome to Hangman!");
+		console.log("Lets start Harry Potter Hangman!");
 	};
 	//game should generate a new random word object
 	this.generateRandWord=function () {
 		var randWord = wordBank[Math.floor(Math.random()*wordBank.length)];
-		console.log(randWord);
+		//console.log(randWord);
 		var newWord= new Word(randWord);
 		newWord.generateGuessWord();
 		return newWord;
